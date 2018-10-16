@@ -10,15 +10,6 @@
    	$('.cart').slideUp();
  })
  //nav-con导航栏的
-/* $('.nav-con>li').hover(function  () {
- 	$(this).children('a').css('color','#FF6700');
- 	$(this).children('div').slideDown();
- },function  () {
- 	$(this).children('a').css('color','#333');
- 	if ($(this).index()<12) {
- 		$(this).children('div').slideUp();
- 	}
- })*/
 $('.nav-con>li').on('mouseenter', function () {
 //  $(this).addClass('color-red');
 	$(this).children('a').css('color','#FF6700');
@@ -26,14 +17,14 @@ $('.nav-con>li').on('mouseenter', function () {
         if (!$('.nav2>div').hasClass('xia')&&$(this).index()>1&&$(this).index()<10) {
                  $('.nav2>div').addClass('xia');
             }
-        else if($('.nav2>div').hasClass('xia')&&$(this).index()<2&&$(this).index()>9){
+        else if($('.nav2>div').hasClass('xia')&&$(this).index()<2||$(this).index()>9){
                 $('.nav2>div').removeClass('xia');
-            }  
+            }
                 $('.nav2>div').html(`
-                	
+
                     <h2>${$(this).index()}</h2>
                 `);
-      
+
 });
 
 $('.nav-con>li').on('mouseleave', function () {
@@ -42,9 +33,6 @@ $('.nav-con>li').on('mouseleave', function () {
     if (!$('.nav2>div').hasClass('xia')&&$(this).index()>1&&$(this).index()<10) {
         $('.nav2>div').addClass('xia');
     }
-    else if($('.nav2>div').hasClass('xia')&&$(this).index()<2&&$(this).index()>9){
-                $('.nav2>div').removeClass('xia');
-            } 
 });
 $('.nav2').on('mouseleave',function() {
         if ($('.nav2>div').hasClass('xia')) {
